@@ -1,0 +1,124 @@
+{
+  "data_path": "/data/Image_datasets/Imagenet/ImageNet2012-pre/images/",
+  "dataset": "imnet1k",
+  "model": "resnet50",
+  "rnet_config": [
+    3,
+    4,
+    6,
+    3
+  ],
+  "rnet_bl_type": "bottleneck",
+  "device": "cuda",
+  "batch_size": 16,
+  "epochs": 125,
+  "workers": 16,
+  "opt": "sgd",
+  "lr": 0.1,
+  "momentum": 0.9,
+  "weight_decay": 0.0001,
+  "lr_step_size": 30,
+  "lr_gamma": 0.1,
+  "print_freq": 50,
+  "output_dir": "/data/Vision_models/",
+  "save_name": "tdTOP_m2_t2",
+  "resume": "",
+  "finetune": false,
+  "finetune_lr_fc": null,
+  "start_epoch": 0,
+  "cache_dataset": false,
+  "sync_bn": false,
+  "test_only": false,
+  "pretrained": false,
+  "auto_augment": null,
+  "random_erase": 0.0,
+  "random_erase_scale": [
+    0.02,
+    0.33
+  ],
+  "random_erase_ratio": [
+    0.3,
+    3.3
+  ],
+  "random_erase_val": 0.0,
+  "apex": false,
+  "apex_opt_level": "O1",
+  "world_size": 4,
+  "dist_url": "env://",
+  "load_custom_pretrained": null,
+  "use_custom_block_model": true,
+  "custom_blocks": [
+    3,
+    4
+  ],
+  "block_layers": [
+    [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  ],
+  "block_type": "se",
+  "time_steps": 2,
+  "output_over_t": false,
+  "out_over_t_method": "pred_over_t",
+  "out_over_t_blocks": [
+    0,
+    1,
+    2
+  ],
+  "mdist": 1,
+  "resize_size": 256,
+  "crop_size": 224,
+  "nbnt": false,
+  "rep_reduction": [
+    "r",
+    16
+  ],
+  "rep_pooling_ops": [
+    "avp"
+  ],
+  "rep_combine_tech": "sum",
+  "spotlight_gen_technique": "top_attention_only",
+  "operation_seq": "channel->spatial",
+  "sp_tech": "att_scale",
+  "channel_nonlin": "sigmoid",
+  "spatial_searchlight_nonlin": null,
+  "dropout": 0,
+  "use_fca": false,
+  "del_dir": false,
+  "local_rank": null,
+  "wnet_thresh": 0.5,
+  "use_old_td_model": false,
+  "sort_pred_by_softmax": false,
+  "overlap_pred_pen": 1.0,
+  "eval_over_iou": false,
+  "v2_dataset": null
+}
