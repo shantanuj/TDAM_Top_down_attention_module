@@ -6,6 +6,7 @@
     - Download original ImageNet-1k ILSVRC-12 dataset from: https://image-net.org/download-images
     - Extract and convert training and validation images to Pytorch dataloader format (with each class having a subdirectory) as detailed in https://github.com/pytorch/vision/tree/main/references/classification
     - For ImageNet-V2 validation, download dataset from https://github.com/modestyachts/ImageNetV2
+    - Additionally, for weakly-supervised object localization, download ImageNet ILSVRC-12 localization annotations for validation data from: https://image-net.org/download-images 
     
 4. Training commands: 
     - To train an original ResNet50 model (which has block configuration of 3,4,6,3 bottleneck blocks) with distributed GPU training:
@@ -28,4 +29,6 @@
         
     - To evaluate on V2 validation sets, modify --data-path to refer to ImageNetv2 directory and modify --v2_dataset with name of  split type (e.g. imagenetv2-top-images-format-val)
         - CUDA_VISIBLE_DEVICES=0,1,2,3 python3 -m torch.distributed.launch --nproc_per_node=4 --master_port 25903 --use_env main_train.py --data-path /data/Image_datasets/Imagenet/ImageNet2012-pre/V2/ -b 64 --save_name tdTOP_m2_t2 --rnet_config 3,4,6,3 --rbl bottleneck --cbm --cb 3,4 --cbs 0,1,2,3,4,5 --bt td_spotlight --mdist 1 --time_steps 2 --sp_tech att_scale --epochs 125  --model resnet50 --output-dir /data/Vision_models/ --test-only --lcpt /data/Vision_models/tdTOP_m2_t2_model_best.ckpt --v2_dataset imagenetv2-top-images-format-val
+
+    - For grad-CAM/localization maps over computation steps, pls see usage in the jupyter notebook "Model_loading_and_visualization_examples.ipynb" and associated scripts in utils.py 
     
