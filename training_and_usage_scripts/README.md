@@ -1,12 +1,11 @@
 ### Training/evaluation and usage scripts for TDAM
-This directory is adapted from the original timm library code: https://github.com/rwightman/pytorch-image-models 
 
 ### Direct usage:
-1. For direct usage of TDAM models, please see examples in jupyter notebook `TDAM_usage_and_visualization.ipynb` for model loading and optionally, for how to operate the model to get outputs over each computation/time step.
-2. Integrating with "timm":
+1. For direct usage of TDAM models, please see examples in jupyter notebook `TDAM_usage_and_visualization.ipynb` for model loading and usage.
+2. Integrating with "timm" library (https://github.com/rwightman/pytorch-image-models):
     - Currently, we have provided our integration with "timm" in the `local_timm` directory. 
     - However, if you wish to integrate with your own version of "timm", please do the following:
-        1. Add `tdresnet.py` (provided in this directory) to timm.models
+        1. Add `tdresnet.py` (provided in `local_timm.models`) to timm.models
         2. Add `tdresnet` to model registry by modifying timm.models.__init__.py to include line `from .tdresnet import *`
         3. Add `custom_utils.py`, `distributed_td_train_and_eval.sh` and `td_train_and_evaluate.py` to the main directory.
         
@@ -35,7 +34,7 @@ For example to train a TDAM-ResNet34 with t=2, m=2 and joint attention for 100 e
 
 4. Operating TDAM-models on multiple computation/time steps:
     - By default TDAM-models output only the last computation step. To get outputs over each computation step, set `model.output_over_t` to be True. 
-    - For evaluation on ImageNet-1k, to filter cases wherein multiple objects may be present in an image, the predictions of TDAM-models are by default filtered over unique time-steps by only keeping predictions with IOU<0.5.     
+    - For evaluation on ImageNet-1k, to filter cases wherein multiple objects are present in an image, the predictions of TDAM-models over computation steps are by default filtered to only keep those with IOU<0.5.     
  
 5. Applying model at different layers/blocks:
     - Currently, for ResNet based models it is recommended to apply TDAM at layers 3 and 4 (the last two layers) as they are deeper in the hierarchy, and the features are more semantically meaningful for top-down attention to operate. 
