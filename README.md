@@ -22,10 +22,11 @@ pip install -r requirements.txt
 
 ## Code environment
 The codebase and associated experiments are performed in following environment:
-- OS: Ubuntu
+- OS: Ubuntu 20.04.4 LTS
 - CUDA: 11.4
 - GPU: NVIDIA Tesla V100 DGXS (16GB)
-- Python 3.8.10
+- Python: 3.8.10
+- Python packages/toolkits: See [`requirements.txt`](requirements.txt)
 
 ## Acknowledgement
 The codebase utilizes the [timm](https://github.com/rwightman/pytorch-image-models) and [torchvision](https://github.com/pytorch/vision) libraries.
