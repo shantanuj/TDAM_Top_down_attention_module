@@ -14,11 +14,18 @@ pip install -r requirements.txt
 ## ImageNet-1k pre-trained models
 
 |Model|Top-1(%)|Top-5(%)|GoogleDrive|
-|:---:|:----:|:---:|:----------------:|
+|:-------:|:----:|:---:|:----------------:|
 |TDAM(t2,m2)-RNet18 |72.16|90.61|[TD_ResNet18](https://drive.google.com/file/d/1_dko76uh6YjQG9o_vw6LkXTB_3abYbQG/view?usp=sharing)|
 |TDAM(t2,m2)-RNet34 |75.75|92.58|[TD_ResNet34](https://drive.google.com/file/d/1v1DOkjbtXAMUgQLzuox9xCFpG4XgCZGF/view?usp=sharing)|
 |TDAM(t2,m1)-RNet50 |78.96|94.19|[TD_ResNet50](https://drive.google.com/file/d/1teK0HxyP_3P1pDLePwesiO8xG_ZAJVR_/view?usp=sharing)|
 |TDAM(t2,m1)-RNet101|81.62|95.76|[TD_ResNet101](https://drive.google.com/file/d/1bbUztG6NpL2vUKmTfpjKRiSCjzQvtYzt/view?usp=sharing)|
+
+## Code environment
+The codebase and associated experiments are performed in following environment:
+    - OS: Ubuntu
+    - CUDA: 11.4
+    - GPU: NVIDIA Tesla V100 DGXS (16GB)
+    - Python 3.8.10
 
 ## Acknowledgement
 The codebase utilizes the [timm](https://github.com/rwightman/pytorch-image-models) and [torchvision](https://github.com/pytorch/vision) libraries.
