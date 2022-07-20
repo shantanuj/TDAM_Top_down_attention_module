@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """ ImageNet Training Script adapted from timm
 
+Original timm copyright statement:
 This is intended to be a lean and easily modifiable ImageNet training script that reproduces ImageNet
 training results with some of the latest networks and training techniques. It favours canonical PyTorch
 and standard Python style over trying to be able to 'do it all.' That said, it offers quite a few speed
@@ -449,7 +450,14 @@ def main():
         args.apply_td_at_blocks_for_layers = [[],
                  [],
                  [0,1,2,8,13,18,22,23,24,25],
-                 [0,1,2,3,4,5]]
+                 [0,1,2]]
+        
+    elif(args.model == 'tdresnet152'):
+        args.apply_td_at_blocks_for_layers = [[],
+                 [],
+                 [0,1,2,8,13,18,22,25,28,31,32,33,34,35],
+                 [0,1,2]]
+        
         
     if('tdresnet' in args.model):
         model = create_model(

@@ -19,7 +19,7 @@ from .helpers import build_model_with_cfg
 from .layers import DropBlock2d, DropPath, AvgPool2dSame, BlurPool2d, GroupNorm, create_attn, get_attn, create_classifier
 from .registry import register_model
 
-__all__ = ['tdresnet18','tdresnet34','tdresnet101','tdresnet50','TD_ResNet', 'BasicBlock', 'Bottleneck']  # model_registry will add each entrypoint fn to this
+__all__ = ['tdresnet18','tdresnet34','tdresnet101','tdresnet50','tdresnet152','TD_ResNet', 'BasicBlock', 'Bottleneck']  # model_registry will add each entrypoint fn to this
 
 
 def _cfg(url='', **kwargs):
@@ -343,6 +343,12 @@ default_cfgs = {
         url='',
         interpolation='bicubic'),
     'tdresnet101': _cfg(
+        url='',
+        interpolation='bicubic', crop_pct=0.95),
+    'tdresnet101': _cfg(
+        url='',
+        interpolation='bicubic', crop_pct=0.95),
+    'tdresnet152': _cfg(
         url='',
         interpolation='bicubic', crop_pct=0.95),
     'tdresnet18': _cfg(url='', interpolation='bicubic'),
@@ -1499,5 +1505,17 @@ def tdresnet101d(pretrained=False, **kwargs):
     model_args = dict(block=Bottleneck, layers=[3, 4, 23, 3], stem_width=32, stem_type='deep', avg_down=True, **kwargs)
     return _create_resnet('tdresnet101d', pretrained, **model_args)
 
+@register_model
+def tdresnet152(pretrained=False, **kwargs):
+    """Constructs a ResNet-152 model.
+    """
+    model_args = dict(block=Bottleneck, layers=[3, 8, 36, 3], **kwargs)
+    return _create_resnet('tdresnet152', pretrained, **model_args)
 
-
+@register_model
+def tdresnet152d(pretrained=False, **kwargs):
+    """Constructs a ResNet-152-D model.
+    """
+    model_args = dict(
+        block=Bottleneck, layers=[3, 8, 36, 3], stem_width=32, stem_type='deep', avg_down=True, **kwargs)
+    return _create_resnet('tdresnet152d', pretrained, **model_args)

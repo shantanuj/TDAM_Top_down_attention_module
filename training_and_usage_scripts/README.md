@@ -27,6 +27,11 @@ For example to train a TDAM-ResNet34 with t=2, m=2 and joint attention for 100 e
 ./distributed_td_train_and_eval.sh 4 /data/shantanu/Image_datasets/Imagenet/ImageNet2012-pre/images/ --model tdresnet34 --time_steps 2 --mdist 2 --sched cosine --epochs 100 --warmup-epochs 5 --lr 0.4 --remode pixel --reprob 0.5 --batch-size 128 --amp -j 4 --spotlight_gen_technique joint_top_bottom_concat_attention
 ```
 
+Similarly to train a TDAM-ResNet50 with t=2, m=1 and joint attention for 150 epochs with cutmix and mixup:
+```
+./distributed_td_train_and_eval.sh 4 /data/shantanu/Image_datasets/Imagenet/ImageNet2012-pre/images/ --model tdresnet50 --time_steps 2 --mdist 1 --sched cosine --epochs 150 --warmup-epochs 5 --lr 0.4 --remode pixel --reprob 0.5 --batch-size 128 --amp -j 4 --spotlight_gen_technique joint_top_bottom_concat_attention --cutmix 1.0 --mixup 0.7 
+```
+
 3. To evaluate a TDAM based model, simply specify the path to the model under the --resume argument and add --validate-only, as done below:
 ```
 ./distributed_td_train_and_eval.sh 4 /data/shantanu/Image_datasets/Imagenet/ImageNet2012-pre/images/ --model tdresnet50 --time_steps 2 --mdist 1  --remode pixel --reprob 0.5 --batch-size 128 --amp -j 4 --resume /data/shantanu/TDAM_Models/TD_RNet50_t2_m1_joint.pth.tar --validate-only
