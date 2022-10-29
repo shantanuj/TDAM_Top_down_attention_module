@@ -23,14 +23,6 @@ pip install -r requirements.txt
 |TDAM(t2,m1)-RNet50 |78.96|94.19|[TD_ResNet50](https://drive.google.com/file/d/1teK0HxyP_3P1pDLePwesiO8xG_ZAJVR_/view?usp=sharing)|
 |TDAM(t2,m1)-RNet101|81.62|95.76|[TD_ResNet101](https://drive.google.com/file/d/1bbUztG6NpL2vUKmTfpjKRiSCjzQvtYzt/view?usp=sharing)|
 
-## Code environment
-The codebase and associated experiments are performed in following environment:
-- OS: Ubuntu 20.04.4 LTS
-- CUDA: 11.4
-- GPU: NVIDIA Tesla V100 DGXS (16GB)
-- Python: 3.8.10
-- Python packages/toolkits: See [`requirements.txt`](requirements.txt)
-
 ## Citation
 
     @inproceedings{jaiswal2022tdam,
@@ -41,6 +33,14 @@ The codebase and associated experiments are performed in following environment:
      year={2022},
      organization={Springer}
     }
+    
+## Code environment
+The codebase and associated experiments are performed in following environment:
+- OS: Ubuntu 20.04.4 LTS
+- CUDA: 11.4
+- GPU: NVIDIA Tesla V100 DGXS (16GB)
+- Python: 3.8.10
+- Python packages/toolkits: See [`requirements.txt`](requirements.txt)
      
 ## Acknowledgement
 The codebase utilizes the [timm](https://github.com/rwightman/pytorch-image-models) and [torchvision](https://github.com/pytorch/vision) libraries.
