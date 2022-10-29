@@ -1,6 +1,9 @@
 # "TDAM: Top-Down Attention Module for Contextually Guided Feature Selection in CNNs" 
 
-- PyTorch implementation for paper "Top-Down Attention Module for Contextually Guided Feature Selection in CNNs" (ECCV 2022; [paper](https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136850255.pdf).
+- PyTorch implementation for paper "Top-Down Attention Module for Contextually Guided Feature Selection in CNNs" (ECCV 2022; [paper](https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136850255.pdf)).
+
+![Poster](TDAM_poster_img.png)
+
 
 - To run code, ideally create a virtual/conda environment and install requirements listed in [`requirements.txt`](requirements.txt) by running: 
 ```
