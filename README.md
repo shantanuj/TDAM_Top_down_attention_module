@@ -1,6 +1,6 @@
 # "TDAM: Top-Down Attention Module for Contextually Guided Feature Selection in CNNs" 
 
-- PyTorch implementation for paper "Top-Down Attention Module for Contextually Guided Feature Selection in CNNs".
+- PyTorch implementation for paper "Top-Down Attention Module for Contextually Guided Feature Selection in CNNs" (ECCV 2022; [paper](https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136850255.pdf).
 
 - To run code, ideally create a virtual/conda environment and install requirements listed in [`requirements.txt`](requirements.txt) by running: 
 ```
@@ -28,6 +28,17 @@ The codebase and associated experiments are performed in following environment:
 - Python: 3.8.10
 - Python packages/toolkits: See [`requirements.txt`](requirements.txt)
 
+## Citation
+
+    @inproceedings{jaiswal2022tdam,
+     title={TDAM: Top-Down Attention Module for Contextually Guided Feature Selection in CNNs},
+     author={Jaiswal, Shantanu and Fernando, Basura and Tan, Cheston},
+     booktitle={European Conference on Computer Vision},
+     pages={259--276},
+     year={2022},
+     organization={Springer}
+    }
+     
 ## Acknowledgement
 The codebase utilizes the [timm](https://github.com/rwightman/pytorch-image-models) and [torchvision](https://github.com/pytorch/vision) libraries.
 
